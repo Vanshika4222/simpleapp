@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: vanshikasimpleappdev
-          image: acrdemopoc.azurecr.io/vanshikasimpleappdev
+          image: acrdemopoc.azurecr.io/vanshikasimpleappdev:#{Build.BuildId}#
           ports:
           - containerPort: 80
 --- 
