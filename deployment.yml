@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: Vanshikasimpleapp
+  name: vanshikasimpleapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Vanshikasimpleapp
+      app: vanshikasimpleapp
   template:
     metadata:
       labels:
-        app: Vanshikasimpleapp
+        app: vanshikasimpleapp
     spec:
       containers:
-        - name: Vanshikasimpleapp
-          image: acrdemopoc.azurecr.io/Vanshikasimpleapp:12
+        - name: vanshikasimpleapp
+          image: acrdemopoc.azurecr.io/vanshikasimpleapp:12
           ports:
           - containerPort: 80
