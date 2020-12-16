@@ -1,0 +1,30 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vanshikasimpleappdev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vanshikasimpleappdev
+  template:
+    metadata:
+      labels:
+        app: vanshikasimpleappdev
+    spec:
+      containers:
+        - name: vanshikasimpleappdev
+          image: acrdemopoc.azurecr.io/vanshikasimpleappdev
+          ports:
+          - containerPort: 80
+--- 
+# https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
+kind: Service
+metadata:
+    name: vanshikasimpleappdev
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+    selector:
+        app: vanshikasimpleappdev
