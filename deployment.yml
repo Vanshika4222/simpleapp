@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: simpleapp
+  name: simpleapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: simpleapp
+    spec:
+      containers:
+        - image: >-
+            vanshikasimpleapp:6
+          name: simpleapp
+          ports:
+            - containerPort: 9001
